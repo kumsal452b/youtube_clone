@@ -8,7 +8,7 @@ function Feed() {
   const [selectedCategory, setSelectedCategory] = useState("New");
   const [videos, setVideos] = useState([]);
   useEffect(() => {
-    fetchFromUrl(`search?part=snippet&${selectedCategory}`)
+    fetchFromUrl(`search?part=snippet&q=${selectedCategory}`)
       .then((data) => {
         setVideos(data.items);
       })

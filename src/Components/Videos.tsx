@@ -1,5 +1,6 @@
 import { Box, Stack } from '@mui/material'
 import React from 'react'
+import ChanelCard from './ChanelCard'
 import ChanelDetail from './ChanelDetail'
 import VideoCard from './VideoCard'
 interface Prop{
@@ -11,7 +12,7 @@ function Videos({videos}:Prop) {
       {videos.map((item:any,idx:number)=>(
         <Box key={idx}>
           {item.id.videoId && <VideoCard videos={item}/>}
-          {/* {item.id.channelId && <ChanelDetail chanelDetail={item}/>} */}
+          {item.id.channelId && <ChanelCard chanelDetail={item}/>}
         </Box>
       ))}
     </Stack>

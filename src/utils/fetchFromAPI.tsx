@@ -12,6 +12,7 @@ const options = {
   };
 
   export const fetchFromUrl= async (url:string)=>{
-    const {data}= await axios.get(`${base_url}/${url}`,options);
+    const full_url=`${base_url}/${url}`;
+    const {data}= await axios.get(full_url,options);
     return data;
   }

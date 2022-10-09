@@ -6,8 +6,9 @@ import { demoProfilePicture } from "../utils/contstants";
 
 interface Prop {
   chanelDetail: any;
+  marginTop?:string;
 }
-function ChanelCard({ chanelDetail }: Prop) {
+function ChanelCard({ chanelDetail,marginTop }: Prop) {
   return (
     <Box
       sx={{
@@ -21,7 +22,8 @@ function ChanelCard({ chanelDetail }: Prop) {
           md:"320px"
         },
         height:"326px",
-        margin:"auto"
+        margin:"auto",
+        marginTop:marginTop
       }}
     >
       <Link to={`/channel/${chanelDetail?.id?.channelId}`}>
@@ -35,7 +37,7 @@ function ChanelCard({ chanelDetail }: Prop) {
         }}
         >
           <CardMedia 
-            image={chanelDetail.snippet.thumbnails.high.url || demoProfilePicture}
+            image={chanelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
             sx={{
               borderRadius:"50%",
               height:"180px",
@@ -49,7 +51,7 @@ function ChanelCard({ chanelDetail }: Prop) {
             <CheckCircle sx={{
                 fontSize:"14px",
                 color:"gray",
-                ml:5
+                ml:1
               }}/>
           </Typography>
           <Typography>

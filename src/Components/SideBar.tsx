@@ -9,15 +9,14 @@ interface Props {
 const SideBar = ({ selectedCategories, setSelectedCategories }: Props) => {
   return (
     <Stack
-      // direction={{ xs: "column", sm: "row" }}
+      direction={"column"}
       sx={{
         overflowY: "auto",
         height: {
           sx: "auto",
           md: "95%",
         },
-        // display:"flex",
-        // flexDirection:{ xs: "column", sm: "row" }
+        flexDirection:{ xs: "row", sm: "row",md:"column" }
       }}
     >
       {categories.map((el) => {

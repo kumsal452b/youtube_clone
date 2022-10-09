@@ -14,8 +14,9 @@ function VideoCard({ videos }: Prop) {
   return (
     <Card sx={{
       width:{
-        md:"320px",
         xs:"100%",
+        md:"320px",
+        sm:"358px",
         boxShadow:"none",
         borderRadius:"none"
       }
@@ -23,7 +24,11 @@ function VideoCard({ videos }: Prop) {
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
-          sx={{ width: 358, height: 180 }}
+          sx={{ width: {
+            xs:"100%",
+            sm:"358px",
+            md:"320px"
+          }, height: 180 }}
           
         />
         <CardContent sx={{
